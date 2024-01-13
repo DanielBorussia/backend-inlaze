@@ -10,11 +10,11 @@ function listUsers() {
 }
 
 function listUserById(id) {
-  return Model.findOne({ _id: id, isDeleted: false });
+  return Model.find({ _id: id, isDeleted: false });
 }
 
 function updateUser(user) {
-  return Model.findByIdAndUpdate(user._id, { fullName: user.fullName, age: user.age, email: user.email });
+  return Model.findByIdAndUpdate(user._id, { fullName: user.fullName });
 }
 
 function deleteUser(id) {

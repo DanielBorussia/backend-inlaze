@@ -1,19 +1,19 @@
 const store = require("../stores/user.store");
-const bcrypt = require("bcryptjs");
 
 async function addUser(req) {
   const { fullName, age, email, password } = req.body;
 
-  const passwordHash = await bcrypt.hash(password, 10);
   const user = {
     fullName: fullName,
     age: age,
     email: email,
-    password: passwordHash,
+    password: password,
     isDeleted: false,
   };
 
-  return store.add(user);
+  user.password = await user.encryptPassword(user.password);
+  console.log(user);
+  //return store.add(user);
 }
 
 function listUsers() {
@@ -32,7 +32,7 @@ function updateUser(req) {
     age,
     email,
   };
-
+  console.log(user);
   return store.updateUser(user);
 }
 

@@ -29,6 +29,7 @@ router.get("/:id", function (req, res) {
   controller
     .listPostById(req.params.id)
     .then((post) => {
+      console.log(post);
       response.success(req, res, post);
     })
     .catch((e) => {
@@ -62,6 +63,7 @@ router.delete("/:id", function (req, res) {
   controller
     .deletePost(req.params.id)
     .then((post) => {
+      console.log(post);
       response.success(req, res, post);
     })
     .catch((e) => {

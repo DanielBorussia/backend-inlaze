@@ -45,6 +45,7 @@ function addLikesByPost(id) {
   if (!postFound) {
     return Promise.reject("El post no se encontro.");
   }
+  console.log(postFound.likes);
   return store.updateLikesPost(postFound);
 }
 

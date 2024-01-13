@@ -32,7 +32,7 @@ function updateUser(req) {
     age,
     email,
   };
-
+  console.log(user);
   return store.updateUser(user);
 }
 

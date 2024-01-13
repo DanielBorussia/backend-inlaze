@@ -13,6 +13,7 @@ async function addUser(req) {
     isDeleted: false,
   };
 
+  console.log(user);
   return store.add(user);
 }
 
@@ -32,7 +33,7 @@ function updateUser(req) {
     age,
     email,
   };
-
+  console.log(user);
   return store.updateUser(user);
 }
 

@@ -26,8 +26,8 @@ function updatePost(req) {
   const { title, content } = req.body;
   const post = {
     _id: req.params.id,
-    title,
-    content,
+    title: title,
+    content: content,
   };
   return store.updatePost(post);
 }
@@ -45,6 +45,7 @@ function addLikesByPost(id) {
   if (!postFound) {
     return Promise.reject("El post no se encontro.");
   }
+  console.log(postFound.likes);
   return store.updateLikesPost(postFound);
 }
 

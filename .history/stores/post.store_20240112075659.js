@@ -6,14 +6,10 @@ function addPost(post) {
 }
 
 function listPosts() {
-  return Model.find({ isDeleted: false })
-    .populate("user", {
-      fullName: 1,
-      email: 1,
-    })
-    .sort({
-      createdAt: -1,
-    });
+  return Model.find({ isDeleted: false }, { sort: [["createdAt", "asc"]] }).populate("user", {
+    fullName: 1,
+    email: 1,
+  });
 }
 
 function listPostById(id) {

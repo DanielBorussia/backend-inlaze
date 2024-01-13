@@ -14,7 +14,7 @@ function listUserById(id) {
 }
 
 function updateUser(user) {
-  return Model.findByIdAndUpdate(user._id, { fullName: user.fullName, age: user.age, email: user.email });
+  return Model.findByIdAndUpdate(user._id, { fullName: user.fullName });
 }
 
 function deleteUser(id) {

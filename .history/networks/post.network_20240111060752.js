@@ -18,6 +18,7 @@ router.get("/", function (req, res) {
   controller
     .listPosts()
     .then((posts) => {
+      console.log(posts);
       response.success(req, res, posts);
     })
     .catch((e) => {
@@ -29,6 +30,7 @@ router.get("/:id", function (req, res) {
   controller
     .listPostById(req.params.id)
     .then((post) => {
+      console.log(post);
       response.success(req, res, post);
     })
     .catch((e) => {
@@ -40,6 +42,7 @@ router.put("/:id", function (req, res) {
   controller
     .updatePost(req)
     .then((post) => {
+      console.log(post);
       response.success(req, res, post);
     })
     .catch((e) => {
@@ -62,6 +65,7 @@ router.delete("/:id", function (req, res) {
   controller
     .deletePost(req.params.id)
     .then((post) => {
+      console.log(post);
       response.success(req, res, post);
     })
     .catch((e) => {

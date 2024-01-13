@@ -18,6 +18,7 @@ router.get("/", function (req, res) {
   controller
     .listUsers()
     .then((users) => {
+      console.log(users);
       response.success(req, res, users);
     })
     .catch((e) => {
@@ -29,6 +30,7 @@ router.get("/:id", function (req, res) {
   controller
     .listUserById(req.params.id)
     .then((user) => {
+      console.log(user);
       response.success(req, res, user);
     })
     .catch((e) => {
@@ -40,6 +42,7 @@ router.put("/:id", function (req, res) {
   controller
     .updateUser(req)
     .then((user) => {
+      console.log(user);
       response.success(req, res, user);
     })
     .catch((e) => {
@@ -51,6 +54,7 @@ router.delete("/:id", function (req, res) {
   controller
     .deleteUser(req.params.id)
     .then((user) => {
+      console.log(user);
       response.success(req, res, user);
     })
     .catch((e) => {
